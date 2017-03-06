@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>BCPcast Audio Player</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/mediaelement-and-player.min.js"></script>
+	<link rel="stylesheet" href="css/style.css" media="screen">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+	<div class="cover-image">
+		<img src="img/cover.png">
+	</div>
+
+	<div class="episode-description">
+		<h1>Episode 1: An Aptitude For Disaster</h1>
+		<p>In the first episode of the Business Continuity Podcast, we meet the people who keep some of the largest organisations in the UK running throughout disruption, and ask the question: what makes someone good in a disaster? And why are certain people attracted to situations where everything goes wrong?</p>
+		<a target="_blank" href="https://itunes.apple.com/gb/podcast/the-bcpcast/id1113990524?mt=2">Listen to the BCPcast</a>
+	</div>
+
+	<div class="audio-player">
+		<audio id="audio-player" src="media/episode-1.mp3" type="audio/mp3" controls="controls"></audio>
+		<a class="download" href="media/episode-1.mp3" download>
+			<img src="img/download.png" alt="download">
+		</a>
+	</div>
+
+	<script>$('audio').mediaelementplayer({duration:120});</script>
+
+	<script>
+	$(document).ready(function() {
+		$('#audio-player').mediaelementplayer({
+			alwaysShowControls: true,
+			features: ['playpause','volume','progress'],
+			audioVolume: 'horizontal',
+			audioWidth: 400,
+			audioHeight: 120
+		});
+	});
+	</script>
+</body>
+
+</html>
